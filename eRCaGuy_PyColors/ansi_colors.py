@@ -38,17 +38,7 @@ def print_red(*args, **kwargs):
     Print the arguments in bright red text.
     - Accepts all the same arguments as the built-in `print()` function.
     """
-    
-    # NOT QUITE RIGHT
-    # print(f"{colors.FRE}", *args, f"{colors.END}", **kwargs)
-    
-    # ALSO NOT QUITE RIGHT
-    # print(f"{colors.FRE}" + args[0], args[1:], f"{colors.END}", **kwargs)
-
-    # Works!
-    # Concatenate the red color code with each argument
     colored_args = [f"{FBR}{arg}{END}" for arg in args]
-    # Print the colored arguments
     print(*colored_args, **kwargs)
 
 
@@ -63,7 +53,7 @@ def print_yellow(*args, **kwargs):
 
 def print_green(*args, **kwargs):
     """
-    Print the arguments in bright green text.
+    Print the arguments in green text.
     - Accepts all the same arguments as the built-in `print()` function.
     """
     colored_args = [f"{FGR}{arg}{END}" for arg in args]

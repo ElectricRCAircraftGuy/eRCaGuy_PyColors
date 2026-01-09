@@ -8,7 +8,7 @@ version = "1.0.0"
 description = "A Python module to add ANSI color and format codes to strings for terminal output"
 readme = "README.md"
 authors = [
-    {name = "Gabriel Staples", email = "gabriel@example.com"}
+    {name = "Gabriel Staples"}
 ]
 license = "MIT"
 classifiers = [
