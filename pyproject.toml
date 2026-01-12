@@ -4,7 +4,9 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "eRCaGuy_PyColors"
-version = "0.1.0"
+# dynamically set the variables in this list as described below, in the `[tool.setuptools.dynamic]`
+# section
+dynamic = ["version"]
 description = "A Python module to add ANSI color and format codes to strings for terminal output"
 readme = "README.md"
 authors = [
@@ -35,3 +37,6 @@ Issues = "https://github.com/ElectricRCAircraftGuy/eRCaGuy_PyColors/issues"
 [tool.setuptools.packages.find]
 where = ["."]
 include = ["eRCaGuy_PyColors*"]
+
+[tool.setuptools.dynamic]
+version = {attr = "eRCaGuy_PyColors.__version__"}

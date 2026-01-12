@@ -87,7 +87,9 @@ Screenshot:
 
 # Publishing to PyPI
 
-See: https://packaging.python.org/en/latest/tutorials/packaging-projects/
+See: 
+1. https://packaging.python.org/en/latest/tutorials/packaging-projects/
+1. https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
 
 For maintainers, to publish a new version to PyPI:
 
