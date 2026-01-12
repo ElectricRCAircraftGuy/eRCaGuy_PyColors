@@ -6,10 +6,10 @@ https://github.com/ElectricRCAircraftGuy/eRCaGuy_PyColors
 
 Example usage:
     import eRCaGuy_PyColors as colors
-    
+
     print(f"{colors.FGR}This text is green.{colors.END}")
     print(f"{colors.FBB}This text is bright blue.{colors.END}")
-    
+
     colors.print_green("This text is green.")
     colors.print_blue("This text is bright blue.")
     colors.print_red("This text is bright red.")
@@ -43,7 +43,7 @@ from eRCaGuy_PyColors.ansi_colors import (
     print_blue,
 )
 
-__version__ = "1.0.0"
+__version__ = "0.1.0"
 __author__ = "Gabriel Staples"
 __all__ = [
     # ANSI codes and color constants

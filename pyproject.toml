@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "eRCaGuy_PyColors"
-version = "1.0.0"
+version = "0.1.0"
 description = "A Python module to add ANSI color and format codes to strings for terminal output"
 readme = "README.md"
 authors = [
@@ -24,7 +24,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Terminals",
 ]
-keywords = ["ansi", "color", "terminal", "console", "formatting", "colorize"]
+keywords = ["ansi", "color", "terminal", "console", "formatting", "colorize", "print", "string"]
 requires-python = ">=3.7"
 
 [project.urls]
