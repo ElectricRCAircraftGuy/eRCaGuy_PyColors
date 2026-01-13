@@ -40,8 +40,9 @@ if [ $? -eq 0 ]; then
     echo "Tagged and pushed v${VERSION}"
 else
     echo ""
-    echo "ERROR: Upload to PyPI failed. Not tagging in git. You probably need to increment the" \
-         "version number in 'eRCaGuy_PyColors/__init__.py' to trigger a new upload."
+    echo "ERROR: Upload to PyPI failed. Not tagging this as a new release in git." \
+         "You probably need to increment the version number in" \
+         "'eRCaGuy_PyColors/__init__.py' to trigger a new upload."
     exit 1
 fi
 
