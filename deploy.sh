@@ -11,6 +11,9 @@ echo ""
 pip install --upgrade pip
 python3 -m pip install --upgrade twine build
 
+# Clean the old build
+rm -rf dist/ build/ *.egg-info
+
 # build
 time python3 -m build
 

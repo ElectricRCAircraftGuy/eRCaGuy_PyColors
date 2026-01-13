@@ -124,7 +124,13 @@ For maintainers, to publish a new version to PyPI:
     ```
 1. Update the version number in `eRCaGuy_PyColors/__init__.py`.  
     
-    NB: no new changes will be deployed to PyPI if the version number in `eRCaGuy_PyColors/__init__.py` has not been changed since the last upload. 
+    NB: no new changes will be deployed to PyPI if the version number in `eRCaGuy_PyColors/__init__.py` has not been changed since the last upload.
+1. Clean the old build. 
+
+    NB: Updating the version number above, _plus_ cleaning the old build like this, are _both_ required to ensure a successful new upload to PyPI.
+    ```bash
+    rm -rf dist/ build/ *.egg-info
+    ```
 1. Build the distribution packages according to the settings in `pyproject.toml`:
     ```bash
     time python3 -m build
