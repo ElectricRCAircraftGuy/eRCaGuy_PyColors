@@ -63,7 +63,7 @@ def print_yellow(*args, **kwargs):
 
 def print_green(*args, **kwargs):
     """
-    Print the arguments in bright green text.
+    Print the arguments in green text.
     - Accepts all the same arguments as the built-in `print()` function.
     """
     colored_args = [f"{FGR}{arg}{END}" for arg in args]
