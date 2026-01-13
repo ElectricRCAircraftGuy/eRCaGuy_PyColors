@@ -18,60 +18,13 @@ Example usage:
 
 # NB: use relative imports here to avoid import issues when importing this package directly
 # as a submodule from a higher-level repo.
-from .ansi_colors import (
-    # ANSI codes and color constants
-    ANSI_START,
-    ANSI_FG_GRE,
-    ANSI_FG_BLU,
-    ANSI_FG_BR_BLU,
-    ANSI_FG_RED,
-    ANSI_FG_BR_RED,
-    ANSI_FG_BR_YEL,
-    ANSI_END,
-    ANSI_OFF,
-    F,
-    END,
-    FGN,
-    FGR,
-    FBL,
-    FBB,
-    FRE,
-    FBR,
-    FBY,
-    # Print functions
-    print_red,
-    print_yellow,
-    print_green,
-    print_blue,
-)
+# Notes to self when using the `import *` ("import all") type syntax:
+# - If the `ansi_colors.__all__` list exists, only items from that list are imported.
+# - If the `ansi_colors.__all__` list does NOT exist, all items in that module NOT starting with an
+#   underscore are automatically imported.
+from .ansi_colors import *
 
 # NB: This version number **must** be incremented, and the changes fully committed in git, to
 # trigger a new release on PyPI when you run `./deploy.sh`.
-__version__ = "0.1.4"
+__version__ = "0.1.5"
 __author__ = "Gabriel Staples"
-__all__ = [
-    # ANSI codes and color constants
-    "ANSI_START",
-    "ANSI_FG_GRE",
-    "ANSI_FG_BLU",
-    "ANSI_FG_BR_BLU",
-    "ANSI_FG_RED",
-    "ANSI_FG_BR_RED",
-    "ANSI_FG_BR_YEL",
-    "ANSI_END",
-    "ANSI_OFF",
-    "F",
-    "END",
-    "FGN",
-    "FGR",
-    "FBL",
-    "FBB",
-    "FRE",
-    "FBR",
-    "FBY",
-    # Print functions
-    "print_red",
-    "print_yellow",
-    "print_green",
-    "print_blue",
-]

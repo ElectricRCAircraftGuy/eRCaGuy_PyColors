@@ -102,5 +102,40 @@ def run_tests():
     print_green("This text is green.")
 
 
+# Define what gets exported with `from eRCaGuy_PyColors import *`, or `from .ansi_colors import *`
+#
+# Notes to self when using the `import *` ("import all") type syntax:
+# - If this `ansi_colors.__all__` list exists, only items from this list are imported.
+# - If this `ansi_colors.__all__` list does NOT exist, all items in this module NOT starting with an
+#   underscore are automatically imported.
+__all__ = [
+    # ANSI codes and color constants
+    "ANSI_START",
+    "ANSI_FG_GRE",
+    "ANSI_FG_BLU",
+    "ANSI_FG_BR_BLU",
+    "ANSI_FG_RED",
+    "ANSI_FG_BR_RED",
+    "ANSI_FG_BR_YEL",
+    "ANSI_END",
+    "ANSI_OFF",
+    "F",
+    "END",
+
+    "FGN",
+    "FGR",
+    "FBL",
+    "FBB",
+    "FRE",
+    "FBR",
+    "FBY",
+    # Print functions
+    "print_red",
+    "print_yellow",
+    "print_green",
+    "print_blue",
+]
+
+
 if __name__ == "__main__":
     run_tests()
