@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-# Deploy eRCaGuy_PyColors to PyPI
+# Deploy a new release of eRCaGuy_PyColors to PyPI, and auto-tag the release in git.
+# Usage: `./deploy.sh`
 
 echo "Deploying eRCaGuy_PyColors to PyPI..."
 echo "- NB: no new changes will be deployed apparently if the version number in"
