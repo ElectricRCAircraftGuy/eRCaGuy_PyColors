@@ -30,9 +30,9 @@ keywords = ["ansi", "color", "terminal", "console", "formatting", "colorize", "p
 requires-python = ">=3.7"
 
 [project.urls]
-Homepage = "https://github.com/ElectricRCAircraftGuy/eRCaGuy_PyColors"
-Repository = "https://github.com/ElectricRCAircraftGuy/eRCaGuy_PyColors"
+Homepage = "https://gabrielstaples.com/"
 Issues = "https://github.com/ElectricRCAircraftGuy/eRCaGuy_PyColors/issues"
+Repository = "https://github.com/ElectricRCAircraftGuy/eRCaGuy_PyColors"
 
 [tool.setuptools.packages.find]
 where = ["."]
