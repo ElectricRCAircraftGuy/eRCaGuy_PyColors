@@ -28,9 +28,21 @@ pip install -e .
 
 To install into a virtual environment:
 ```bash
+# Create and activate a virtual environment
 python3 -m venv ~/venvs/eRCaGuy_PyColors
-source ~/venvs/eRCaGuy_PyColors/bin/activate
-# Now install as above
+. ~/venvs/eRCaGuy_PyColors/bin/activate
+
+# To see if you're in a virtual environment, run:
+echo "$VIRTUAL_ENV"
+# If in a virtual environment, this will print the path to the virtual environment.
+# Otherwise, it will print nothing.
+
+# Now install as above. Ex: 
+# Option 1: install from PyPI:
+pip install eRCaGuy_PyColors
+# Option 2: install from source: 
+# - Inside of the `eRCaGuy_PyColors` repo: 
+pip install .
 ```
 
 
@@ -97,30 +109,48 @@ For maintainers, to publish a new version to PyPI:
     ```bash
     python3 -m pip install --upgrade twine build
     ```
-1. Update the version number in `pyproject.toml`
-1. Build the distribution packages:
+1. Update the version number in `eRCaGuy_PyColors/__init__.py`.
+1. Build the distribution packages according to the settings in `pyproject.toml`:
     ```bash
-    python3 -m build
+    time python3 -m build
     ```
+1. Obtain a PyPI API token: 
+    1. Log into your PyPI account.
+    1. Go to https://test.pypi.org/manage/account/#api-tokens, setting the “Scope” to “Entire account”. Don’t close the page until you have copied and saved the token — you won’t see that token again.
 1. Test an upload to TestPyPI first (recommended):
-    ```bash
-    python3 -m twine upload --repository testpypi dist/*
-    ```
+    1. Obtain an API token at https://test.pypi.org/manage/account/#api-tokens --> "Add API token" --> (Activate two-factor authentication, if not yet done, to enable token generation.) --> Set "Token name" to `Gabriel TestPyPI` (using your name); set "Scope" to `Entire account (all projects)` --> click "Create token". Follow the instructions there. ie: create a `~/.pypirc` file with the following contents:
+        `~/.pypirc`:
+        ```ini
+        [testpypi]
+        username = __token__
+        password = <your TestPyPI API token here, without the angle brackets>
+
+        [pypi]
+        username = __token__
+        password = <your PyPI API token here, without the angle brackets>
+        ```
+        Paste your TestPyPI API token into the `password` field under `[testpypi]`, and save the file. 
+    1. Upload 
+        ```bash
+        python3 -m twine upload --repository testpypi dist/*
+        ```
 1. Test an installation in a virtual environment from TestPyPI:
     ```bash
     python3 -m venv ~/venvs/test_eRCaGuy_PyColors
-    source ~/venvs/test_eRCaGuy_PyColors/bin/activate
+    . ~/venvs/test_eRCaGuy_PyColors/bin/activate
     pip install --index-url https://test.pypi.org/simple/ --no-deps eRCaGuy_PyColors
     ```
     Test that it works as expected.
 1. Upload to PyPI using twine:
-    ```bash
-    python3 -m twine upload dist/*
-    ```
+    1. Obtain an API token at https://pypi.org/manage/account/#api-tokens --> "Add API token" --> (Activate two-factor authentication, if not yet done, to enable token generation.) --> Set "Token name" to `Gabriel PyPI` (using your name); set "Scope" to `Entire account (all projects)` --> click "Create token". Follow the instructions there. ie: update your `~/.pypirc` file by pasting in your token under the `[pypi]` section as shown above.
+    1. Upload
+        ```bash
+        python3 -m twine upload dist/*
+        ```
 1. Test an installation in a virtual environment from PyPI:
     ```bash
     python3 -m venv ~/venvs/eRCaGuy_PyColors
-    source ~/venvs/eRCaGuy_PyColors/bin/activate
+    . ~/venvs/eRCaGuy_PyColors/bin/activate
     pip install eRCaGuy_PyColors
     ```
     Test that it works as expected.
