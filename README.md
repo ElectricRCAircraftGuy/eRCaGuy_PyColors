@@ -9,7 +9,14 @@ A Python module to add ANSI color and format codes to strings for terminal outpu
 
 # Installation
 
-Install from PyPI (once published):
+Upgrade pip first (optional but recommended):
+```bash
+pip install --upgrade pip
+# or (more explicit)
+python3 -m pip install --upgrade pip
+```
+
+Install from PyPI:
 ```bash
 pip install eRCaGuy_PyColors
 ```
@@ -105,6 +112,12 @@ See:
 
 For maintainers, to publish a new version to PyPI:
 
+#### Short version
+```bash
+./deploy.sh
+```
+
+#### Details
 1. Install or upgrade `twine`: 
     ```bash
     python3 -m pip install --upgrade twine build
