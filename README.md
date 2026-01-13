@@ -136,10 +136,10 @@ For maintainers, to publish a new version to PyPI:
     ```bash
     time python3 -m build
     ```
-1. Obtain a PyPI API token: 
-    1. Log into your PyPI account.
-    1. Go to https://test.pypi.org/manage/account/#api-tokens, setting the “Scope” to “Entire account”. Don’t close the page until you have copied and saved the token — you won’t see that token again.
-1. Test an upload to TestPyPI first (recommended):
+1. (Recommended) upload to TestPyPI using `twine`: 
+
+    Test an upload to TestPyPI first:
+    1. Log into your TestPyPI account at https://test.pypi.org/. 
     1. Obtain an API token at https://test.pypi.org/manage/account/#api-tokens --> "Add API token" --> (Activate two-factor authentication, if not yet done, to enable token generation.) --> Set "Token name" to `Gabriel TestPyPI` (using your name); set "Scope" to `Entire account (all projects)` --> click "Create token". Follow the instructions there. ie: create a `~/.pypirc` file with the following contents:
         `~/.pypirc`:
         ```ini
@@ -152,7 +152,7 @@ For maintainers, to publish a new version to PyPI:
         password = <your PyPI API token here, without the angle brackets>
         ```
         Paste your TestPyPI API token into the `password` field under `[testpypi]`, and save the file. 
-    1. Upload 
+    1. Upload using `twine`:
         ```bash
         python3 -m twine upload --repository testpypi dist/*
         ```
@@ -163,9 +163,10 @@ For maintainers, to publish a new version to PyPI:
     pip install --index-url https://test.pypi.org/simple/ --no-deps eRCaGuy_PyColors
     ```
     Test that it works as expected.
-1. Upload to PyPI using twine:
+1. Upload to PyPI using `twine`:
+    1. Log into your PyPI account at https://pypi.org/.
     1. Obtain an API token at https://pypi.org/manage/account/#api-tokens --> "Add API token" --> (Activate two-factor authentication, if not yet done, to enable token generation.) --> Set "Token name" to `Gabriel PyPI` (using your name); set "Scope" to `Entire account (all projects)` --> click "Create token". Follow the instructions there. ie: update your `~/.pypirc` file by pasting in your token under the `[pypi]` section as shown above.
-    1. Upload
+    1. Upload using `twine`:
         ```bash
         python3 -m twine upload dist/*
         ```
