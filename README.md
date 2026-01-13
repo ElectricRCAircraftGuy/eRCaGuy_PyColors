@@ -109,6 +109,7 @@ Screenshot:
 See: 
 1. https://packaging.python.org/en/latest/tutorials/packaging-projects/
 1. https://packaging.python.org/en/latest/guides/writing-pyproject-toml/
+1. Looks really useful!: https://realpython.com/pypi-publish-python-package/ 
 
 For maintainers, to publish a new version to PyPI:
 
