@@ -16,6 +16,8 @@ Example usage:
     colors.print_yellow("This text is bright yellow.")
 """
 
+# NB: use relative imports here to avoid import issues when importing this package directly
+# as a submodule from a higher-level repo.
 from .ansi_colors import (
     # ANSI codes and color constants
     ANSI_START,
@@ -43,7 +45,9 @@ from .ansi_colors import (
     print_blue,
 )
 
-__version__ = "0.1.3"
+# NB: This version number **must** be incremented, and the changes fully committed in git, to
+# trigger a new release on PyPI when you run `./deploy.sh`.
+__version__ = "0.1.4"
 __author__ = "Gabriel Staples"
 __all__ = [
     # ANSI codes and color constants

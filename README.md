@@ -36,20 +36,37 @@ pip install -e .
 To install into a virtual environment:
 ```bash
 # Create and activate a virtual environment
-python3 -m venv ~/venvs/eRCaGuy_PyColors
-. ~/venvs/eRCaGuy_PyColors/bin/activate
+cd path/to/repo/eRCaGuy_PyColors
+rm -rf .venv1/          # remove old venv if it exists
+python3 -m venv .venv1  # create a new virtual environment in dir `.venv1/`
+. .venv1/bin/activate   # activate the virtual environment
 
 # To see if you're in a virtual environment, run:
 echo "$VIRTUAL_ENV"
 # If in a virtual environment, this will print the path to the virtual environment.
 # Otherwise, it will print nothing.
 
-# Now install as above. Ex: 
+# Now that you are inside the virtual environment, install as above. Ex: 
 # Option 1: install from PyPI:
 pip install eRCaGuy_PyColors
 # Option 2: install from source: 
 # - Inside of the `eRCaGuy_PyColors` repo: 
 pip install .
+
+# Now test the install in a temp dir to ensure imports don't import from the source dir directly
+# accidentally. ie: we want to test the package we just installed above, not the source code 
+# package in this repo directly.
+mkdir temp/
+cd temp/
+# test it
+python3 -c 'import eRCaGuy_PyColors as c; c.print_blue("hey")'               # prints "hey" in blue
+python3 -c 'import eRCaGuy_PyColors.ansi_colors as c2; c2.print_blue("hi")'  # prints "hi" in blue
+# cd back up to the root of the main repo when done
+cd ..
+
+# deactivate the virtual environment when done testing
+# - this is only a valid command when inside a virtual environment
+deactivate
 ```
 
 
@@ -158,8 +175,9 @@ For maintainers, to publish a new version to PyPI:
         ```
 1. Test an installation in a virtual environment from TestPyPI:
     ```bash
-    python3 -m venv ~/venvs/test_eRCaGuy_PyColors
-    . ~/venvs/test_eRCaGuy_PyColors/bin/activate
+    rm -rf .venv2/
+    python3 -m venv .venv2
+    . .venv2/bin/activate
     pip install --index-url https://test.pypi.org/simple/ --no-deps eRCaGuy_PyColors
     ```
     Test that it works as expected.
@@ -172,8 +190,9 @@ For maintainers, to publish a new version to PyPI:
         ```
 1. Test an installation in a virtual environment from PyPI:
     ```bash
-    python3 -m venv ~/venvs/eRCaGuy_PyColors
-    . ~/venvs/eRCaGuy_PyColors/bin/activate
+    rm -rf .venv3/
+    python3 -m venv .venv3
+    . .venv3/bin/activate
     pip install eRCaGuy_PyColors
     ```
     Test that it works as expected.
