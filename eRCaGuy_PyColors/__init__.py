@@ -43,7 +43,7 @@ from eRCaGuy_PyColors.ansi_colors import (
     print_blue,
 )
 
-__version__ = "0.1.2"
+__version__ = "0.1.3"
 __author__ = "Gabriel Staples"
 __all__ = [
     # ANSI codes and color constants

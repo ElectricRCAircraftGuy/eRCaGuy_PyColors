@@ -39,7 +39,8 @@ if [ $? -eq 0 ]; then
     echo "Tagged and pushed v${VERSION}"
 else
     echo ""
-    echo "ERROR: Upload failed. Not tagging in git."
+    echo "ERROR: Upload failed. Not tagging in git. You probably need to increment the version"
+    echo "number in 'eRCaGuy_PyColors/__init__.py' to trigger a new upload."
     exit 1
 fi
 
