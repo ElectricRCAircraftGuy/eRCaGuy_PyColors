@@ -38,10 +38,10 @@ def print_red(*args, **kwargs):
     Print the arguments in bright red text.
     - Accepts all the same arguments as the built-in `print()` function.
     """
-    
+
     # NOT QUITE RIGHT
     # print(f"{colors.FRE}", *args, f"{colors.END}", **kwargs)
-    
+
     # ALSO NOT QUITE RIGHT
     # print(f"{colors.FRE}" + args[0], args[1:], f"{colors.END}", **kwargs)
 
@@ -81,14 +81,14 @@ def print_blue(*args, **kwargs):
 
 def run_tests():
     # Test the colors
-    
+
     print(f"{FGR}This text is green.{END}")
     print(f"{FBB}This text is bright blue.{END}")
-    
+
     print_red("This text is bright red.")
     print_red("This text", "is bright red.")
     print_red("This text", "is", "bright", "red.")
-    
+
     print_red("This text", "is", end=" ")  # end with a space instead of a newline
     print_red("bright", "red.")
 

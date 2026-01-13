@@ -16,7 +16,7 @@ pip install --upgrade pip
 python3 -m pip install --upgrade pip
 ```
 
-Install from PyPI:
+Install from PyPI: https://pypi.org/project/eRCaGuy-PyColors/:
 ```bash
 pip install eRCaGuy_PyColors
 ```

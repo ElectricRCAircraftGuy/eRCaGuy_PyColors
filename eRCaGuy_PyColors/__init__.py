@@ -16,7 +16,7 @@ Example usage:
     colors.print_yellow("This text is bright yellow.")
 """
 
-from eRCaGuy_PyColors.ansi_colors import (
+from .ansi_colors import (
     # ANSI codes and color constants
     ANSI_START,
     ANSI_FG_GRE,
