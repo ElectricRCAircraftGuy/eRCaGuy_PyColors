@@ -122,7 +122,9 @@ For maintainers, to publish a new version to PyPI:
     ```bash
     python3 -m pip install --upgrade twine build
     ```
-1. Update the version number in `eRCaGuy_PyColors/__init__.py`.
+1. Update the version number in `eRCaGuy_PyColors/__init__.py`.  
+    
+    NB: no new changes will be deployed to PyPI if the version number in `eRCaGuy_PyColors/__init__.py` has not been changed since the last upload. 
 1. Build the distribution packages according to the settings in `pyproject.toml`:
     ```bash
     time python3 -m build
