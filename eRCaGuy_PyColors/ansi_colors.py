@@ -8,15 +8,15 @@ https://github.com/ElectricRCAircraftGuy/eRCaGuy_PyColors
 
 """
 
-
+# fmt: off
 ANSI_START = "\033["    # start of an ANSI formatting sequence
 
 ANSI_FG_GRE = ";32"     # foreground color green
 ANSI_FG_BLU = ";34"     # foreground color blue
 ANSI_FG_BR_BLU = ";94"  # foreground color bright blue
-ANSI_FG_RED = ";31"    # foreground color red
-ANSI_FG_BR_RED = ";91" # foreground color bright red
-ANSI_FG_BR_YEL = ";93" # foreground color bright yellow
+ANSI_FG_RED = ";31"     # foreground color red
+ANSI_FG_BR_RED = ";91"  # foreground color bright red
+ANSI_FG_BR_YEL = ";93"  # foreground color bright yellow
 
 ANSI_END = "m"          # end of an ANSI formatting sequence
 
@@ -31,6 +31,7 @@ FBB = f"{ANSI_START}{ANSI_FG_BR_BLU}{ANSI_END}"  # bright blue text
 FRE = f"{ANSI_START}{ANSI_FG_RED}{ANSI_END}"     # red text
 FBR = f"{ANSI_START}{ANSI_FG_BR_RED}{ANSI_END}"  # bright red text
 FBY = f"{ANSI_START}{ANSI_FG_BR_YEL}{ANSI_END}"  # bright yellow text
+# fmt: on
 
 
 def print_red(*args, **kwargs):
@@ -121,7 +122,7 @@ __all__ = [
     "ANSI_OFF",
     "F",
     "END",
-
+    # ---
     "FGN",
     "FGR",
     "FBL",
